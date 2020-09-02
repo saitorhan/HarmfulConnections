@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Harmful Connections</string>
+
+    <string name="admob_app_id" translatable="false">ca-app-pub-4883339257168610~9990078153</string>
+    <string name="admob_banner_real" translatable="false">ca-app-pub-4883339257168610/2651602048</string>
+    <string name="admob_banner_test" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_gecis_real" translatable="false">ca-app-pub-4883339257168610/3720183272</string>
+    <string name="admob_gecis_test" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_odul_real" translatable="false">ca-app-pub-4883339257168610/2762324828</string>
+    <string name="admob_odul_test" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
+
+    <string name="banner" translatable="false">@string/admob_banner_real</string>
+    <string name="gecis" translatable="false">@string/admob_gecis_real</string>
+    <string name="odul" translatable="false">@string/admob_odul_real</string>
+
+    <string name="dbVersion" translatable="false">2</string>
+    <string name="dbName" translatable="false">harmfulconnections</string>
+    <string name="search">Search</string>
+    <string name="source_link" translatable="false">https://www.usom.gov.tr/url-list.xml</string>
+    <string name="usom_data" translatable="false">usom-data</string>
+    <string name="xml_info" translatable="false">xml-info</string>
+    <string name="url_list" translatable="false">url-list</string>
+    <string name="url_info" translatable="false">url-info</string>
+    <string name="table_xml_info" translatable="false">xmlinfo</string>
+    <string name="table_url_list" translatable="false">urls</string>
+    <string name="download_success">Download success</string>
+    <string name="download_error">Error on downloading</string>
+    <string name="downloading">Downloading...</string>
+    <string name="inserting">Inserting...</string>
+    <string name="not_found">Not found links</string>
+    <string name="download_data">Parsing Data</string>
+    <string name="insert_data">Inserting Data</string>
+    <string name="type_link">Type Link</string>
+    <string name="no_data">No data in database. Download data now?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="download">Update Database</string>
+    <string name="show_reward_video">A video ad must be followed to update the database.</string>
+    <string name="watch">Watch</string>
+    <string name="cancel">Cancel</string>
+    <string name="parsing">Parsing...</string>
+    <string name="link_count">connections found</string>
+    <string name="update_time">Last Database Updated</string>
+    <string name="record_count">Record Count</string>
+    <string name="about">About</string>
+    <string name="rate_app">Rate This App</string>
+    <string name="column_description">description_default</string>
+    <string name="banking">Banking - Phishing</string>
+    <string name="badurl">Harmful Software Hosted / Emitted URL</string>
+    <string name="baddomain">Harmful Software Hosting / Emitting Domain Name</string>
+    <string name="phishing">Phishing</string>
+    <string name="malsoftware">Malicious Software - Command Control Center</string>
+    <string name="badip">Harmful Software Hosting / Emitting IP</string>
+    <string name="portscan">Cyber Attack (Port Scan, Rough Force, etc.)</string>
+    <string name="badappip">Harmful Software Hosted / Emitting IP</string>
+    <string name="badappdomain">Harmful Software Hosting / Emitting Domain Name</string>
+    <string name="category">Category:</string>
+    <string name="share">Share This App</string>
+</resources>

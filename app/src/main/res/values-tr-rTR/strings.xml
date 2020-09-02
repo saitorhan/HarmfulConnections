@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zararlı Bağlantılar</string>
+    <string name="search">Ara</string>
+    <string name="download_success">İndirme başarılı</string>
+    <string name="download_error">İndirmede hata oluştu</string>
+    <string name="downloading">İndiriliyor...</string>
+    <string name="inserting">Kaydediliyor...</string>
+    <string name="not_found">Kayıt bulunamadı</string>
+    <string name="download_data">Veri Ayrıştırma</string>
+    <string name="insert_data">Veri Kaydetme</string>
+    <string name="type_link">Aranacak Link Yazın</string>
+    <string name="no_data">Veritabanında veri bulunamadı. Şimdi indirmek istiyor musunuz?</string>
+    <string name="yes">Evet</string>
+    <string name="no">Hayır</string>
+    <string name="download">Veritabanını Güncelle</string>
+    <string name="show_reward_video">Veritabanını güncellemek için bir video reklam izlenmelidir.</string>
+    <string name="watch">İzle</string>
+    <string name="cancel">İptal</string>
+    <string name="parsing">Ayrıştırılıyor...</string>
+    <string name="link_count">bağlantı bulundu</string>
+    <string name="update_time">Son Veritabanı Güncelleme Zamanı</string>
+    <string name="record_count">Kayıt Sayısı</string>
+    <string name="about">Hakkında</string>
+    <string name="rate_app">"Uygulamayı Oyla "</string>
+    <string name="column_description">description</string>
+    <string name="banking">Bankacılık - Oltalama</string>
+    <string name="badurl">Zararlı Yazılım Barındıran/Yayan URL</string>
+    <string name="baddomain">Zararlı Yazılım Barındıran/Yayan Alan Adı</string>
+    <string name="phishing">Oltalama</string>
+    <string name="malsoftware">Zararlı Yazılım - Komuta Kontrol Merkezi</string>
+    <string name="badip">Zararlı Yazılım Barındıran/Yayan IP</string>
+    <string name="portscan">Siber Saldırı (Port Tarama, Kaba Kuvvet vb.)</string>
+    <string name="badappip">Zararlı Yazılım Barındıran/Yayan IP</string>
+    <string name="category">Kategori:</string>
+    <string name="badappdomain">Zararlı Yazılım Barındıran/Yayan Alan Adı</string>
+    <string name="share">Uygulamayı Paylaş</string>
+</resources>
