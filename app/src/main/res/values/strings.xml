@@ -1,18 +1,6 @@
 <resources>
     <string name="app_name">Harmful Connections</string>
 
-    <string name="admob_app_id" translatable="false">ca-app-pub-4883339257168610~9990078153</string>
-    <string name="admob_banner_real" translatable="false">ca-app-pub-4883339257168610/2651602048</string>
-    <string name="admob_banner_test" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="admob_gecis_real" translatable="false">ca-app-pub-4883339257168610/3720183272</string>
-    <string name="admob_gecis_test" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="admob_odul_real" translatable="false">ca-app-pub-4883339257168610/2762324828</string>
-    <string name="admob_odul_test" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
-
-    <string name="banner" translatable="false">@string/admob_banner_real</string>
-    <string name="gecis" translatable="false">@string/admob_gecis_real</string>
-    <string name="odul" translatable="false">@string/admob_odul_real</string>
-
     <string name="dbVersion" translatable="false">2</string>
     <string name="dbName" translatable="false">harmfulconnections</string>
     <string name="search">Search</string>
