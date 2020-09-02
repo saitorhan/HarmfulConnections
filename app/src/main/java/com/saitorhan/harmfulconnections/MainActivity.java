@@ -20,31 +20,17 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.reward.RewardItem;
-import com.google.android.gms.ads.reward.RewardedVideoAd;
-import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 import com.saitorhan.harmfulconnections.database.DbCRUD;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText editTextSearch;
     ListView listView;
-    InterstitialAd interstitialAd;
-    RewardedVideoAd rewardedVideoAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
-        MobileAds.initialize(this, getString(R.string.admob_app_id));
-        loadAd();
         checkData();
         bindControls();
     }
@@ -55,72 +41,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
 
-    private void loadAd() {
-        AdView adView = findViewById(R.id.adViewMainBanner);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
-
-        interstitialAd = new InterstitialAd(this);
-        interstitialAd.setAdUnitId(getString(R.string.gecis));
-        interstitialAd.loadAd(new AdRequest.Builder().build());
-        interstitialAd.setAdListener(interstitialAdListener);
-
-        rewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
-        rewardedVideoAd.setRewardedVideoAdListener(rewardedVideoAdListener);
-        rewardedVideoAd.loadAd(getString(R.string.odul), new AdRequest.Builder().build());
-    }
-
-    AdListener interstitialAdListener = new AdListener() {
-        @Override
-        public void onAdClosed() {
-            interstitialAd.loadAd(new AdRequest.Builder().build());
-            super.onAdClosed();
-        }
-    };
-
-    RewardedVideoAdListener rewardedVideoAdListener = new RewardedVideoAdListener() {
-
-
-        @Override
-        public void onRewardedVideoAdLoaded() {
-        }
-
-        @Override
-        public void onRewardedVideoAdOpened() {
-
-        }
-
-        @Override
-        public void onRewardedVideoStarted() {
-
-        }
-
-        @Override
-        public void onRewardedVideoAdClosed() {
-            rewardedVideoAd.loadAd(getString(R.string.odul), new AdRequest.Builder().build());
-        }
-
-        @Override
-        public void onRewarded(RewardItem rewardItem) {
-
-            openDownloadActivity(false);
-        }
-
-        @Override
-        public void onRewardedVideoAdLeftApplication() {
-
-        }
-
-        @Override
-        public void onRewardedVideoAdFailedToLoad(int i) {
-            rewardedVideoAd.loadAd(getString(R.string.odul), new AdRequest.Builder().build());
-        }
-
-        @Override
-        public void onRewardedVideoCompleted() {
-
-        }
-    };
 
     private void checkData() {
         DbCRUD dbCRUD = new DbCRUD(this, false);
@@ -205,11 +125,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(getPackageName(), Context.MODE_PRIVATE);
         searchCount = sharedPreferences.getInt("searchCount", 1);
 
-        if (searchCount++ % 5 == 0) {
-            if (interstitialAd.isLoaded()) {
-                interstitialAd.show();
-            }
-        }
 
         sharedPreferences.edit().putInt("searchCount", searchCount).apply();
     }
@@ -256,33 +171,8 @@ public class MainActivity extends AppCompatActivity {
 
     void openDownloadActivity(boolean addCount) {
 
-        SharedPreferences sharedPreferences = this.getSharedPreferences(getPackageName(), Context.MODE_PRIVATE);
-        int downloadCount = sharedPreferences.getInt("downloadCount", 1);
-        if (addCount && downloadCount % 5 == 0) {
-            if (rewardedVideoAd.isLoaded()) {
+        Intent intent = new Intent(getApplicationContext(), DownloadActivity.class);
+        startActivity(intent);
 
-                AlertDialog.Builder alBuilder = new AlertDialog.Builder(this);
-                alBuilder.setTitle(getString(R.string.app_name));
-                alBuilder.setMessage(getString(R.string.show_reward_video));
-                alBuilder.setIcon(getResources().getDrawable(R.drawable.icon));
-                alBuilder.setNegativeButton(getString(R.string.cancel), null);
-                alBuilder.setNegativeButtonIcon(getResources().getDrawable(R.drawable.cancel));
-                alBuilder.setPositiveButton(getString(R.string.watch), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        rewardedVideoAd.show();
-                    }
-                });
-                alBuilder.setPositiveButtonIcon(getResources().getDrawable(R.drawable.play));
-                alBuilder.show();
-            } else {
-                Intent intent = new Intent(getApplicationContext(), DownloadActivity.class);
-                intent.putExtra("add", false);
-                startActivity(intent);
-            }
-        } else {
-            Intent intent = new Intent(getApplicationContext(), DownloadActivity.class);
-            startActivity(intent);
-        }
     }
 }

@@ -17,8 +17,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.saitorhan.harmfulconnections.database.DbCRUD;
 import com.saitorhan.harmfulconnections.database.DbProcessor;
 
@@ -49,7 +47,6 @@ public class DownloadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download);
 
-        loadAd();
 
         downProgressBar = findViewById(R.id.progressBarDownload);
         insertProgressBar = findViewById(R.id.progressBarInsert);
@@ -66,12 +63,6 @@ public class DownloadActivity extends AppCompatActivity {
             int downloadCount = sharedPreferences.getInt("downloadCount", 0);
             sharedPreferences.edit().putInt("downloadCount", downloadCount + 1).apply();
         }
-    }
-
-    private void loadAd() {
-        AdView adView = findViewById(R.id.adViewDownloadBanner);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
     }
 
     void downloadFile() {
